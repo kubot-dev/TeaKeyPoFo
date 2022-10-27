@@ -1,0 +1,9 @@
+//
+// SITE LOGO STYLES
+
+@use '../abstracts';
+
+.navbar__logo {
+  font-size: abstracts.$logo-size-clamp;
+  font-family: abstracts.$logo;
+}

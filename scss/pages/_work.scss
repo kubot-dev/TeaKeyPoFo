@@ -1,0 +1,111 @@
+//
+// MY WORK PAGE STYLES
+
+@use '../abstracts';
+@use '../components';
+
+.work {
+  position: relative;
+}
+
+.work__content {
+  height: 70vh;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2em;
+
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+
+  @include abstracts.for-tablet-landscape-up {
+    height: 60vh;
+  }
+}
+
+.work__content::-webkit-scrollbar {
+  display: none;
+}
+
+.project {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1em;
+  border: abstracts.$thinner-border-clamp solid abstracts.$border-dimmed;
+  padding: 1em;
+  grid-template-areas:
+    'badge'
+    'headline'
+    'description'
+    'aside';
+
+  @include abstracts.for-tablet-landscape-up {
+    grid-template-columns: 1fr 0.2fr;
+    grid-template-areas:
+      'headline badge'
+      'description badge'
+      'aside badge';
+  }
+}
+
+.project__name {
+  grid-area: headline;
+  text-align: center;
+  @include abstracts.for-tablet-landscape-up {
+    text-align: left;
+  }
+}
+
+.project__description {
+  grid-area: description;
+  text-align: center;
+  @include abstracts.for-tablet-landscape-up {
+    text-align: left;
+  }
+}
+
+.project__aside {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  grid-area: aside;
+  gap: 1em;
+  @include abstracts.for-tablet-landscape-up {
+    justify-content: space-between;
+  }
+}
+
+.project__links {
+  display: flex;
+  gap: 1em;
+}
+
+.project__stack {
+  display: flex;
+  gap: 1em;
+}
+
+.project__badge {
+  grid-area: badge;
+  justify-self: center;
+  & .portfolioThumbnail {
+    background-image: url(/img/projectThumbs/portfolioThumbnail.PNG);
+  }
+
+  & .f1Thumbnail {
+    background-image: url(/img/projectThumbs/f1Thumbnail.PNG);
+  }
+}
+
+.project__badge img {
+  width: abstracts.$badge-size-clamp;
+  aspect-ratio: 1;
+  background-size: 25vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: abstracts.$thinner-border-clamp solid abstracts.$border-dimmed;
+  border-radius: 50%;
+}

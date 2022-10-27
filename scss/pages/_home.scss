@@ -1,0 +1,88 @@
+//
+// HOME PAGE STYLES
+
+@use '../abstracts';
+
+.hero {
+  display: grid;
+  align-items: center;
+  gap: 1em;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  grid-template-areas:
+    'badge'
+    'headline'
+    'subheadline'
+    'text'
+    'cta';
+
+  @include abstracts.for-tablet-portrait-up {
+    grid-template-columns: 1fr 0.4fr;
+    grid-template-areas:
+      'headline badge'
+      'subheadline badge'
+      'text badge'
+      'cta badge';
+    justify-items: start;
+  }
+
+  &__text {
+    text-align: center;
+    @include abstracts.for-tablet-portrait-up {
+      text-align: left;
+    }
+  }
+
+  &__badge {
+    justify-self: center;
+  }
+}
+
+.hero__headline {
+  width: max-content;
+  padding-right: 1rem;
+  color: abstracts.$background-dark;
+  font-family: abstracts.$hero-name;
+  font-size: abstracts.$headline-size-clamp;
+  background: linear-gradient(90deg, #eeaa52, #e73c6f, #2394d5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 3px transparent;
+
+  grid-area: headline;
+}
+
+.hero__subheadline {
+  grid-area: subheadline;
+}
+
+.hero__text {
+  grid-area: text;
+}
+
+.hero__cta {
+  position: relative;
+  grid-area: cta;
+}
+
+.hero__badge {
+  grid-area: badge;
+  justify-self: center;
+
+  @include abstracts.for-tablet-portrait-up {
+    justify-self: end;
+  }
+}
+
+.hero__badge img {
+  width: abstracts.$badge-size-clamp;
+  aspect-ratio: 1;
+  border: abstracts.$thinner-border-clamp solid abstracts.$border-accent;
+  border-radius: 50%;
+}
+
+.rect {
+  stroke-width: 5px;
+  stroke-dasharray: 10px;
+  stroke-dashoffset: 1rem;
+}

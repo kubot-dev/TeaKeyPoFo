@@ -1,0 +1,17 @@
+// Accordion component
+
+.accordion__content {
+  height: 0;
+  overflow: hidden;
+}
+
+.accordion.is-open .accordion__content {
+  height: auto;
+}
+
+.accordion__inner {
+
+  padding-right: 3em;
+  padding-bottom: 1.5em;
+  padding-left: 3em;
+}

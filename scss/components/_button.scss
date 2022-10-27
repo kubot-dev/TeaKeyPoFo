@@ -1,0 +1,43 @@
+//
+// SITE BUTTON STYLES
+
+@use '../abstracts';
+
+.btn {
+  display: inline-block;
+  border: abstracts.$thinner-border-clamp solid abstracts.$border-accent;
+  padding: 0.5em 1em;
+  background: linear-gradient(90deg, #eeaa52, #e73c6f, #2394d5);
+  background-position: -10rem;
+  background-repeat: no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: initial;
+  transition: background-position 250ms ease-in-out, -webkit-text-fill-color 250ms ease-in-out;
+}
+
+.btn:hover {
+  // color: abstracts.$background-dark;
+  background-position: 0rem;
+  -webkit-text-fill-color: transparent;
+}
+
+.border__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  stroke: rgb(218, 26, 26);
+  stroke-dasharray: 450;
+  stroke-dashoffset: 450;
+}
+
+.tags_link {
+  opacity: 1;
+  transition: opacity 150ms ease-in-out;
+}
+
+.tags_link:hover {
+  opacity: 0.5;
+}

@@ -1,0 +1,66 @@
+//
+// CONTACT PAGE STYLES
+
+@use '../abstracts';
+
+.contact {
+  display: flex;
+  flex-flow: column;
+  gap: 5rem;
+}
+
+.contactForm__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'name'
+    'email'
+    'message';
+  align-items: stretch;
+  gap: clamp(1rem, calc(0.61rem + 1.95vw), 2rem);
+
+  @include abstracts.for-tablet-portrait-up {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'name message'
+      'email message';
+  }
+  // border: 1px solid red;
+}
+
+.contactForm__nameContainer {
+  // border: 1px solid yellow;
+  grid-area: name;
+}
+.contactForm__emailContainer {
+  // border: 1px solid rgb(255, 0, 242);
+  grid-area: email;
+}
+.contactForm__messageContainer {
+  // border: 1px solid rgb(255, 0, 140);
+  grid-area: message;
+}
+
+.contactForm__label {
+  // display: inline-block;
+  // border: 1px solid red;
+  margin-bottom: 0.5rem;
+}
+
+.contactPickupLine {
+  text-align: center;
+  & p {
+    font-family: abstracts.$logo;
+    font-size: abstracts.$large-font-size-clamp;
+  }
+
+  &__accent {
+    color: abstracts.$background-dark;
+    font-size: abstracts.$large-font-size-clamp;
+    background: linear-gradient(90deg, #eeaa52, #e73c6f, #2394d5);
+    background-clip: initial;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 3px transparent;
+    padding-left: 0.25rem;
+  }
+}

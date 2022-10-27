@@ -1,0 +1,44 @@
+//
+// ABOUT PAGE STYLES
+
+@use '../abstracts';
+
+.about__container {
+  text-align: center;
+
+  @include abstracts.for-tablet-portrait-up {
+    text-align: left;
+  }
+}
+
+.about__name {
+  width: max-content;
+  padding-right: 1rem;
+  font-family: abstracts.$hero-name;
+  font-size: abstracts.$headline-size-clamp;
+  background: linear-gradient(90deg, #eeaa52, #e73c6f, #2394d5);
+
+  background-clip: initial;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
+}
+
+.about__listItemHeading {
+  padding-right: 1rem;
+  color: abstracts.$background-dark;
+  font-family: abstracts.$logo;
+  font-size: abstracts.$large-font-size-clamp;
+  background: #fff;
+  background-clip: initial;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 2px transparent;
+
+  margin-block: 1rem;
+  padding-block: 0.5rem;
+}
+
+.accordion__content {
+  transition: height 250ms ease-in-out;
+}

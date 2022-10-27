@@ -1,0 +1,65 @@
+//
+//BASE ELEMENT STYLES FOR ALL PAGES
+
+@use 'fonts';
+@use 'colors';
+@use 'mixins';
+@use 'variables';
+@use 'breakpoints';
+
+body {
+  background-color: colors.$background-dark;
+  color: colors.$font-light;
+  font-size: variables.$font-size-clamp;
+  font-family: fonts.$othertext;
+}
+
+ul {
+  @include mixins.reset-list;
+}
+
+.border {
+  border: variables.$main-border-clamp solid colors.$border-dimmed;
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+  display: grid;
+  height: 100%;
+  grid-template-rows: 0.1fr 1fr 0.1fr;
+  align-items: center;
+
+  @include mixins.for-tablet-portrait-up {
+    width: 80%;
+  }
+}
+
+.crumbs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  gap: 0.5em;
+}
+
+.crumbs__list {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 1rem;
+}
+
+.crumbs__copyright {
+  font-size: 0.75rem;
+  opacity: 0.5;
+}
+
+.crumbs__list::before {
+  content: 'see my crumbs';
+  font-size: 1rem;
+  opacity: 0.75;
+}

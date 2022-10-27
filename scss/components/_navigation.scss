@@ -1,0 +1,68 @@
+//
+// SITE NAVIGATION
+
+@use '../abstracts';
+
+.navbar {
+  margin-top: 0.5em;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__logo {
+  text-align: left;
+  flex-grow: 1;
+
+  // flex wrapping offset
+  padding-right: 1rem;
+}
+
+.navbar__logo--align {
+  text-align: center;
+}
+
+.navbar__navigation {
+  // padding hack for vertically center align in flex container
+  padding-block: clamp(0.25rem, -0.04rem + 1.46vw, 1rem);
+
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.navLinkHover {
+  background: linear-gradient(90deg, #eeaa52, #e73c6f, #2394d5);
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  transition: background-size 250ms ease-in-out;
+}
+
+.navLinkHover:hover,
+.navLinkHover:active {
+  background-size: 75% 2px;
+}
+
+.underlay {
+  fill: transparent;
+  stroke: rgb(255, 255, 255);
+  stroke-width: 1.5;
+}
+
+.filler {
+  fill: transparent;
+  stroke: url(#gradient);
+  stroke-width: 1.5;
+  stroke-dasharray: 135;
+  stroke-dashoffset: 135;
+  transition: stroke-dashoffset 750ms ease-in-out;
+}
+
+.filler:hover {
+  stroke-dashoffset: 0;
+}

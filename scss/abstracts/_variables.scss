@@ -1,0 +1,11 @@
+//
+// VARIABLES
+
+$main-border-clamp: clamp(0.25rem, 0.07rem + 0.91vw, 0.75rem);
+$thinner-border-clamp: clamp(0.25rem, 0.16rem + 0.45vw, 0.35rem);
+
+$logo-size-clamp: clamp(1.13rem, 0.44rem + 3.41vw, 3rem);
+$font-size-clamp: clamp(1rem, 0.82rem + 0.91vw, 1.5rem);
+$large-font-size-clamp: clamp(1rem, calc(0.61rem + 1.95vw), 2rem);
+$badge-size-clamp: clamp(6rem, 2.49rem + 17.56vw, 15rem);
+$headline-size-clamp: clamp(2rem, 1.22rem + 3.9vw, 4rem);
