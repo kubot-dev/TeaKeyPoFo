@@ -3,7 +3,7 @@
 
 @use '../abstracts';
 
-.scrollbar {
+/* .scrollbar {
   display: none;
   position: absolute;
   right: -1.5rem;
@@ -21,10 +21,10 @@
   position: relative;
   background-color: abstracts.$border-dimmed;
   left: 50%;
-  top: 2px;
   transform: translateX(-50%);
   height: 0.5rem;
   width: 0.5rem;
-  border: 2px solid abstracts.$border-dimmed;
   border-radius: 50%;
-}
+} */
+
+

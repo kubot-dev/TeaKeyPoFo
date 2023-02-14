@@ -57,6 +57,7 @@
   &__accent {
     color: abstracts.$background-dark;
     font-size: abstracts.$large-font-size-clamp;
+    font-style: italic;
     background: linear-gradient(90deg, #eeaa52, #e73c6f, #2394d5);
     background-clip: initial;
     -webkit-background-clip: text;

@@ -43,11 +43,14 @@
   padding-right: 1rem;
   color: abstracts.$background-dark;
   font-family: abstracts.$hero-name;
+  font-style: italic;
   font-size: abstracts.$headline-size-clamp;
   background: linear-gradient(90deg, #eeaa52, #e73c6f, #2394d5);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-stroke: 3px transparent;
+
+  font-weight: 400;
 
   grid-area: headline;
 }

@@ -23,27 +23,3 @@ window.addEventListener('DOMContentLoaded', (e) => {
 window.addEventListener('resize', (e) => {
   detectWrap(navbar)
 })
-
-const scrollbarCustom = document.querySelector('.scrollbar')
-const scrollbarCustomHeight = scrollbarCustom.getBoundingClientRect().height
-
-const workContent = document.querySelector('.work__content')
-const workContentHeight = workContent.scrollHeight
-
-const ratio = function (scrollbarCustomHeight, workContentHeight) {
-  const ratioValue = scrollbarCustomHeight / workContentHeight
-  console.log(ratioValue)
-  return ratioValue
-}
-
-ratio(scrollbarCustomHeight, workContentHeight)
-
-const button = document.querySelector('.scrollbar__button')
-
-workContent.addEventListener('scroll', (e) => {
-  button.style.top = `${e.target.scrollTop}px`
-})
-
-// ziskat
-// zistit pomer v akom budem pohybovat gulickou
-// zistit drahu po ktorej sa mozem hybat
