@@ -14,17 +14,24 @@
   flex-flow: row wrap;
   gap: 2em;
 
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
 
   @include abstracts.for-tablet-landscape-up {
     height: 60vh;
   }
+
+  scrollbar-width: auto;
+  scrollbar-color: abstracts.$border-dimmed transparent;
+  scroll-behavior: smooth;
 }
 
 .work__content::-webkit-scrollbar {
-  display: none;
+  width: 8px;
+}
+
+.work__content::-webkit-scrollbar-thumb {
+  background: abstracts.$border-dimmed;
+  border-radius: 5px;
 }
 
 .project {
@@ -35,6 +42,7 @@
   gap: 1em;
   border: abstracts.$thinner-border-clamp solid abstracts.$border-dimmed;
   padding: 1em;
+  margin-right: 0.25rem;
   grid-template-areas:
     'badge'
     'headline'
