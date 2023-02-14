@@ -8,7 +8,7 @@
   position: relative;
 }
 
-.design__tags {
+.design__tabs {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -20,35 +20,54 @@
   }
 }
 
-.design__frame--phone {
-  height: 100%;
+.tab.is-selected {
+  color: red;
+}
 
-  //*TODO
-  // position: relative; /* not showing scrollbar when uncommented*/
+.tab::before {
+  content: '#';
+  color: white;
+  padding-right: 0.25rem;
+}
 
+.tab:hover::before,
+.tab:focus::before {
+  color: red;
+}
+
+.design__content {
   display: grid;
   grid-template-columns: 1fr;
   height: 60vh;
   gap: 1rem;
 
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
+  scrollbar-width: auto;
+  scrollbar-color: abstracts.$border-dimmed transparent;
 }
 
-.design__frame--phone::-webkit-scrollbar {
+.design__content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.design__content::-webkit-scrollbar-thumb {
+  background: abstracts.$border-dimmed;
+  border-radius: 5px;
+}
+
+.tab-content {
   display: none;
 }
 
-.design__frame {
-  position: relative;
-  border: abstracts.$main-border-clamp solid abstracts.$border-dimmed;
-  height: 30vh;
+.tab-content.is-selected {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
-.design__item.portfolio {
-  background-image: url(/img/designFigma/PortfolioThumbnail.PNG);
-  width: 100%;
-  height: 100%;
-  background-size: cover;
+.designProject {
+  position: relative;
+  border: abstracts.$thinner-border-clamp solid abstracts.$border-dimmed;
+  height: 30vh;
+  margin-right: 0.25rem;
 }
