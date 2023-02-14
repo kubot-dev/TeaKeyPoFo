@@ -16,6 +16,7 @@
   padding-right: 1rem;
   font-family: abstracts.$hero-name;
   font-size: abstracts.$headline-size-clamp;
+  font-style: italic;
   background: linear-gradient(90deg, #eeaa52, #e73c6f, #2394d5);
 
   background-clip: initial;
@@ -26,10 +27,12 @@
 }
 
 .about__listItemHeading {
+  position: relative;
   padding-right: 1rem;
   color: abstracts.$background-dark;
   font-family: abstracts.$logo;
   font-size: abstracts.$large-font-size-clamp;
+  font-style: italic;
   background: #fff;
   background-clip: initial;
   -webkit-background-clip: text;
@@ -37,6 +40,22 @@
 
   margin-block: 1rem;
   padding-block: 0.5rem;
+
+  border-bottom: 2px solid abstracts.$border-dimmed;
+}
+
+.about__listItemHeading::after {
+  content: '>';
+  display: inline-block;
+  position: absolute;
+  color: abstracts.$border-dimmed;
+  right: 0;
+  z-index: 2;
+  transition: transform 200ms ease-in-out;
+}
+
+.about__listItemHeading.rotated::after {
+  transform: rotate(90deg);
 }
 
 .accordion__content {
