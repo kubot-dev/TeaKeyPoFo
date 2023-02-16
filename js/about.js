@@ -1,6 +1,6 @@
 //
 
-const accordions = Array.from(document.querySelectorAll('.accordion'))
+const accordions = Array.from(document.querySelectorAll('.about__listItem'))
 const accContainer = document.querySelector('.about__aboutList')
 
 accContainer.addEventListener('click', (event) => {
@@ -18,6 +18,8 @@ accContainer.addEventListener('click', (event) => {
 
       accordion.classList.toggle('is-open')
       accordionContent.style.height = `${height}px`
+
+      accordionHeader.classList.toggle('rotated')
     }
     const accordion = accordionHeader.parentElement
     const height = getContentHeight(accordion)
@@ -37,13 +39,14 @@ window.addEventListener('load', (event) => {
       }
       const updateAccordion = (accordion, height) => {
         const accordionContent = accordion.querySelector('.accordion__content')
-        console.log(accordionContent)
         accordionContent.style.height = `${height}px`
       }
       const accordion = element.parentElement
       const height = getContentHeight(accordion)
       updateAccordion(element, height)
-      console.log(accordion, height)
+
+      const heading = element.querySelector('.about__listItemHeading')
+      heading.classList.add('rotated')
     }
   })
 })
