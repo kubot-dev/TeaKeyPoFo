@@ -63,6 +63,6 @@
   transition: stroke-dashoffset 750ms ease-in-out;
 }
 
-.filler:hover {
+svg:hover > .filler {
   stroke-dashoffset: 0;
 }
