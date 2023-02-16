@@ -12,14 +12,13 @@
   background-repeat: no-repeat;
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: initial;
-  transition: background-position 250ms ease-in-out, -webkit-text-fill-color 250ms ease-in-out;
+  color: white;
+  transition: color 250ms ease-in-out, background-position 250ms ease-in-out;
 }
 
 .btn:hover {
-  // color: abstracts.$background-dark;
   background-position: 0rem;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .border__image {
