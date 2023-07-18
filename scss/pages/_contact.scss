@@ -15,7 +15,8 @@
   grid-template-areas:
     'name'
     'email'
-    'message';
+    'message'
+    'submit';
   align-items: stretch;
   gap: clamp(1rem, calc(0.61rem + 1.95vw), 2rem);
 
@@ -23,7 +24,8 @@
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       'name message'
-      'email message';
+      'email message'
+      'submit submit';
   }
   // border: 1px solid red;
 }
@@ -42,8 +44,8 @@
 }
 
 .contactForm__label {
-  // display: inline-block;
-  // border: 1px solid red;
+  display: inline-block;
+  font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
@@ -58,10 +60,21 @@
     color: abstracts.$background-dark;
     font-size: abstracts.$large-font-size-clamp;
     font-style: italic;
-    background: linear-gradient(90deg, #eeaa52, #e73c6f, #2394d5);
+    background: abstracts.$accent-gradient;
     background-clip: initial;
     -webkit-background-clip: text;
     -webkit-text-stroke: 3px transparent;
     padding-left: 0.25rem;
   }
+}
+
+.submitButton {
+  text-align: center;
+  width: fit-content;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: abstracts.$thinner-border-clamp solid abstracts.$border-accent;
+  font-weight: bold;
+  grid-area: submit;
+  justify-self: center;
 }

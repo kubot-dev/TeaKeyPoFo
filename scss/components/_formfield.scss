@@ -9,7 +9,6 @@
 .contactForm__container input {
   width: 100%;
   padding: clamp(0.13rem, calc(0.03rem + 0.49vw), 0.38rem);
-  //   border: 2px solid rgb(0, 102, 255);
 }
 
 .textAreaWrapper {
@@ -19,5 +18,5 @@
 .contactForm__messageInput {
   width: 100%;
   padding: clamp(0.13rem, calc(0.03rem + 0.49vw), 0.38rem);
-  height: calc(100% - clamp(2rem, calc(1.8rem + 0.98vw), 2.5rem));
+  height: calc(100% - clamp(2rem, calc(1rem + 0.98vw), 2.5rem));
 }

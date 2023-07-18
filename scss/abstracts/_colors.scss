@@ -1,6 +1,12 @@
 //
 //COLORS
 
+:root {
+  --gradient-1: #eeaa52;
+  --gradient-2: #e73c6f;
+  --gradient-3: #2394d5;
+}
+
 $background-dark: #1f1f1f;
 
 $font-light: #f1ffff;
@@ -8,3 +14,5 @@ $font-light: #f1ffff;
 $border-light: #f1ffff;
 $border-accent: #ebebeb;
 $border-dimmed: #363636;
+
+$accent-gradient: linear-gradient(45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));

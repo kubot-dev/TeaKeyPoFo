@@ -20,19 +20,33 @@
   }
 }
 
+.tab {
+  color: abstracts.$border-dimmed;
+}
+
 .tab.is-selected {
-  color: red;
+  color: abstracts.$font-light;
 }
 
 .tab::before {
   content: '#';
-  color: white;
+  color: abstracts.$border-dimmed;
   padding-right: 0.25rem;
 }
 
 .tab:hover::before,
 .tab:focus::before {
-  color: red;
+  color: transparent;
+  background: abstracts.$accent-gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.tab.is-selected::before {
+  color: transparent;
+  background: abstracts.$accent-gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .design__content {
@@ -70,4 +84,101 @@
   border: abstracts.$thinner-border-clamp solid abstracts.$border-dimmed;
   height: 30vh;
   margin-right: 0.25rem;
+}
+
+.designProject > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+  transition: opacity 150ms ease-in-out;
+}
+
+.designName {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  cursor: default;
+}
+
+.designProject:hover > img {
+  opacity: 1;
+}
+
+.modal-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color: #000000, $alpha: 0.8);
+
+  padding: 1rem;
+  position: fixed;
+  inset: 0;
+
+  opacity: 0;
+  z-index: -1;
+
+  transition: opacity 50ms ease-in-out;
+  @include abstracts.for-tablet-portrait-up {
+    padding: 2rem;
+  }
+  @include abstracts.for-tablet-landscape-up {
+    padding: 5rem;
+  }
+}
+
+.modal-is-open .modal-overlay {
+  opacity: 1;
+  z-index: 1;
+}
+
+.cocoenWrapper {
+  position: relative;
+  border: abstracts.$thinner-border-clamp solid abstracts.$border-dimmed;
+}
+
+.figmaDesign {
+  max-width: 90vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'design'
+    'content';
+
+  @include abstracts.for-tablet-portrait-up {
+    max-width: 80vw;
+  }
+  @include abstracts.for-tablet-landscape-up {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'design content';
+    max-width: 75vw;
+  }
+}
+
+.designFigma {
+  grid-area: design;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  grid-area: content;
+  background-color: #1f1f1faa;
+}
+
+.desingButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.fdLinkButton {
+  width: max-content;
 }

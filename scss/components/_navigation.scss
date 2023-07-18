@@ -36,7 +36,7 @@
 }
 
 .navLinkHover {
-  background: linear-gradient(90deg, #eeaa52, #e73c6f, #2394d5);
+  background: abstracts.$accent-gradient;
   background-size: 0% 2px;
   background-repeat: no-repeat;
   background-position: bottom;

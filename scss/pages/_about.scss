@@ -5,10 +5,26 @@
 
 .about__container {
   text-align: center;
+  padding-right: 0.5rem;
+
+  height: 75vh;
+
+  overflow-y: auto;
+  overflow-anchor: auto;
+  overflow-x: hidden;
 
   @include abstracts.for-tablet-portrait-up {
     text-align: left;
   }
+}
+
+.about__container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.about__container::-webkit-scrollbar-thumb {
+  background: abstracts.$border-dimmed;
+  border-radius: 5px;
 }
 
 .about__name {
@@ -17,7 +33,7 @@
   font-family: abstracts.$hero-name;
   font-size: abstracts.$headline-size-clamp;
   font-style: italic;
-  background: linear-gradient(90deg, #eeaa52, #e73c6f, #2394d5);
+  background: abstracts.$accent-gradient;
 
   background-clip: initial;
   -webkit-background-clip: text;
@@ -37,6 +53,8 @@
   background-clip: initial;
   -webkit-background-clip: text;
   -webkit-text-stroke: 2px transparent;
+
+  cursor: pointer;
 
   margin-block: 1rem;
   padding-block: 0.5rem;
@@ -59,6 +77,60 @@
   transform: rotate(90deg);
 }
 
+.about__listItemText p {
+  margin-top: 0.5rem;
+}
+
+.aboutPreviousExperience {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.aboutPreviousText {
+  margin-left: 2rem;
+}
+
+.aboutPersonal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.aboutPersonalHeadings {
+  font-style: italic;
+}
+
+.aboutPersonalText {
+  margin-left: 2rem;
+}
+
 .accordion__content {
   transition: height 250ms ease-in-out;
+  overflow-y: scroll;
+  overflow-anchor: auto;
+  overflow-x: hidden;
+  padding-right: 0.5rem;
+}
+
+.accordion__content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.accordion__content::-webkit-scrollbar-thumb {
+  background: abstracts.$border-dimmed;
+  border-radius: 5px;
+}
+
+.courseLink {
+  font-style: italic;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.workLink {
+  font-style: bold;
+  color: #ff4144;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }

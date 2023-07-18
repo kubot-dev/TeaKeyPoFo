@@ -7,7 +7,7 @@
   display: inline-block;
   border: abstracts.$thinner-border-clamp solid abstracts.$border-accent;
   padding: 0.5em 1em;
-  background: linear-gradient(90deg, #eeaa52, #e73c6f, #2394d5);
+  background: abstracts.$accent-gradient;
   background-position: -10rem;
   background-repeat: no-repeat;
   background-clip: text;

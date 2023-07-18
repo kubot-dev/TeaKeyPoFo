@@ -45,7 +45,7 @@
   font-family: abstracts.$hero-name;
   font-style: italic;
   font-size: abstracts.$headline-size-clamp;
-  background: linear-gradient(90deg, #eeaa52, #e73c6f, #2394d5);
+  background: abstracts.$accent-gradient;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-stroke: 3px transparent;
@@ -57,6 +57,13 @@
 
 .hero__subheadline {
   grid-area: subheadline;
+}
+
+.hero__accent {
+  background: abstracts.$accent-gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 3px transparent;
 }
 
 .hero__text {

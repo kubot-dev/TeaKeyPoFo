@@ -19,10 +19,6 @@
   @include abstracts.for-tablet-landscape-up {
     height: 60vh;
   }
-
-  scrollbar-width: auto;
-  scrollbar-color: abstracts.$border-dimmed transparent;
-  scroll-behavior: smooth;
 }
 
 .work__content::-webkit-scrollbar {
@@ -99,21 +95,12 @@
 .project__badge {
   grid-area: badge;
   justify-self: center;
-  & .portfolioThumbnail {
-    background-image: url(/img/projectThumbs/portfolioThumbnail.PNG);
-  }
-
-  & .f1Thumbnail {
-    background-image: url(/img/projectThumbs/f1Thumbnail.PNG);
-  }
 }
 
 .project__badge img {
-  width: abstracts.$badge-size-clamp;
   aspect-ratio: 1;
-  background-size: 25vw;
-  background-repeat: no-repeat;
-  background-position: center;
+  object-fit: cover;
+  width: abstracts.$badge-size-clamp;
   border: abstracts.$thinner-border-clamp solid abstracts.$border-dimmed;
   border-radius: 50%;
 }
