@@ -87,16 +87,16 @@ modalOverlay[1].addEventListener('click', (event) => {
   }
 });
 
-fd3.addEventListener('click', (event) => {
-  fd3.classList.add('modal-is-open');
-});
+// fd3.addEventListener('click', (event) => {
+//   fd3.classList.add('modal-is-open');
+// });
 
-modalOverlay[2].addEventListener('click', (event) => {
-  event.stopPropagation();
-  if (event.target.parentElement.classList.contains('designProject')) {
-    fd3.classList.remove('modal-is-open');
-  }
-});
+// modalOverlay[2].addEventListener('click', (event) => {
+//   event.stopPropagation();
+//   if (event.target.parentElement.classList.contains('designProject')) {
+//     fd3.classList.remove('modal-is-open');
+//   }
+// });
 
 // bp1.addEventListener('click', (event) => {
 //   bp1.classList.add('modal-is-open');

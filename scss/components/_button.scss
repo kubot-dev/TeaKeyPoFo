@@ -7,18 +7,11 @@
   display: inline-block;
   border: abstracts.$thinner-border-clamp solid abstracts.$border-accent;
   padding: 0.5em 1em;
-  background: abstracts.$accent-gradient;
-  background-position: -10rem;
-  background-repeat: no-repeat;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: white;
-  transition: color 250ms ease-in-out, background-position 250ms ease-in-out;
+  border-radius: 0.25rem;
 }
 
 .btn:hover {
-  background-position: 0rem;
-  color: transparent;
+  box-shadow: 0 0 1rem 0.5rem abstracts.$border-dimmed inset;
 }
 
 .border__image {

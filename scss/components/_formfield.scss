@@ -1,12 +1,13 @@
 //
 // FORM FIELD STYLES
 
-// .contactForm__container {
-//   display: inline-block;
-//   background-color: green;
-// }
+@use '../abstracts';
 
 .contactForm__container input {
+  background-color: abstracts.$background-dark;
+  color: abstracts.$font-light;
+  border-radius: 0.25rem;
+  border: 1px solid abstracts.$border-dimmed;
   width: 100%;
   padding: clamp(0.13rem, calc(0.03rem + 0.49vw), 0.38rem);
 }
@@ -16,6 +17,11 @@
 }
 
 .contactForm__messageInput {
+  background-color: abstracts.$background-dark;
+  color: abstracts.$font-light;
+  border-radius: 0.25rem;
+  border: 1px solid abstracts.$border-dimmed;
+  resize: none;
   width: 100%;
   padding: clamp(0.13rem, calc(0.03rem + 0.49vw), 0.38rem);
   height: calc(100% - clamp(2rem, calc(1rem + 0.98vw), 2.5rem));

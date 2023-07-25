@@ -37,6 +37,7 @@
   align-items: center;
   gap: 1em;
   border: abstracts.$thinner-border-clamp solid abstracts.$border-dimmed;
+  border-radius: 0.5rem;
   padding: 1em;
   margin-right: 0.25rem;
   grid-template-areas:

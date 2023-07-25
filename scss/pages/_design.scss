@@ -37,14 +37,14 @@
 .tab:hover::before,
 .tab:focus::before {
   color: transparent;
-  background: abstracts.$accent-gradient;
+  background: abstracts.$font-light;
   background-clip: text;
   -webkit-background-clip: text;
 }
 
 .tab.is-selected::before {
   color: transparent;
-  background: abstracts.$accent-gradient;
+  background: abstracts.$font-light;
   background-clip: text;
   -webkit-background-clip: text;
 }
@@ -52,12 +52,10 @@
 .design__content {
   display: grid;
   grid-template-columns: 1fr;
-  height: 60vh;
+  height: 65vh;
   gap: 1rem;
 
   overflow-y: scroll;
-  scrollbar-width: auto;
-  scrollbar-color: abstracts.$border-dimmed transparent;
 }
 
 .design__content::-webkit-scrollbar {
@@ -84,14 +82,16 @@
   border: abstracts.$thinner-border-clamp solid abstracts.$border-dimmed;
   height: 30vh;
   margin-right: 0.25rem;
+  border-radius: 0.25rem;
 }
 
 .designProject > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.65;
+  opacity: 0.35;
   transition: opacity 150ms ease-in-out;
+  cursor: pointer;
 }
 
 .designName {
@@ -99,7 +99,7 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  cursor: default;
+  cursor: pointer;
 }
 
 .designProject:hover > img {
@@ -133,13 +133,13 @@
   z-index: 1;
 }
 
-.cocoenWrapper {
+.figmaDesign {
   position: relative;
   border: abstracts.$thinner-border-clamp solid abstracts.$border-dimmed;
-}
-
-.figmaDesign {
+  border-radius: 0.5rem;
   max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -150,7 +150,7 @@
     max-width: 80vw;
   }
   @include abstracts.for-tablet-landscape-up {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.4fr 0.6fr;
     grid-template-areas: 'design content';
     max-width: 75vw;
   }
@@ -159,16 +159,16 @@
 .designFigma {
   grid-area: design;
   width: 100%;
-  height: 100%;
+  // max-height: 380px;
   object-fit: cover;
 }
 
 .content {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 1rem;
   grid-area: content;
   background-color: #1f1f1faa;
 }

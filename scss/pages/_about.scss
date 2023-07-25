@@ -27,37 +27,16 @@
   border-radius: 5px;
 }
 
-.about__name {
-  width: max-content;
-  padding-right: 1rem;
-  font-family: abstracts.$hero-name;
-  font-size: abstracts.$headline-size-clamp;
-  font-style: italic;
-  background: abstracts.$accent-gradient;
-
-  background-clip: initial;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  display: inline-block;
-}
-
 .about__listItemHeading {
   position: relative;
   padding-right: 1rem;
-  color: abstracts.$background-dark;
-  font-family: abstracts.$logo;
+  font-family: abstracts.$othertext;
   font-size: abstracts.$large-font-size-clamp;
-  font-style: italic;
-  background: #fff;
-  background-clip: initial;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 2px transparent;
+
+  margin-block: 0.75rem;
+  padding-bottom: 0.5rem;
 
   cursor: pointer;
-
-  margin-block: 1rem;
-  padding-block: 0.5rem;
 
   border-bottom: 2px solid abstracts.$border-dimmed;
 }
@@ -78,7 +57,8 @@
 }
 
 .about__listItemText p {
-  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
 }
 
 .aboutPreviousExperience {
@@ -99,6 +79,8 @@
 
 .aboutPersonalHeadings {
   font-style: italic;
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
 
 .aboutPersonalText {
@@ -107,9 +89,6 @@
 
 .accordion__content {
   transition: height 250ms ease-in-out;
-  overflow-y: scroll;
-  overflow-anchor: auto;
-  overflow-x: hidden;
   padding-right: 0.5rem;
 }
 

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,700&family=Taviraj:ital,wght@1,700&family=Titillium+Web:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;0,600;1,700&family=Titillium+Web:wght@300;400;600;700&display=swap");
 :root {
   --gradient-1: #eeaa52;
   --gradient-2: #e73c6f;
@@ -19,7 +19,7 @@ ul {
 }
 
 .border {
-  border: clamp(0.25rem, 0.07rem + 0.91vw, 0.75rem) solid #363636;
+  border: clamp(0.12rem, 0.07rem + 0.91vw, 0.5rem) solid #363636;
   height: 100svh;
   width: 100%;
 }
@@ -69,7 +69,7 @@ ul {
   margin-top: 0.5em;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -85,24 +85,35 @@ ul {
 
 .navbar__navigation {
   padding-block: clamp(0.25rem, -0.04rem + 1.46vw, 1rem);
-  text-align: center;
-  flex-grow: 1;
   display: flex;
-  justify-content: space-between;
-  gap: 1em;
+  align-items: center;
+  gap: 1rem;
 }
 
-.navLinkHover {
-  background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
-  background-size: 0% 2px;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  transition: background-size 250ms ease-in-out;
+.navLink::after {
+  display: block;
+  content: "";
+  border-bottom: solid 2px #f1ffff;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  border-radius: 1px;
 }
 
-.navLinkHover:hover,
-.navLinkHover:active {
-  background-size: 75% 2px;
+.navLink:hover::after,
+.navLink:active::after {
+  transform: scaleX(1);
+}
+
+.navLink.active::after {
+  transform: scaleX(1);
+}
+
+.btn.cv {
+  opacity: 0.75;
+  padding-inline: 8px;
+  padding-block: 4px;
+  text-align: center;
+  border: 0.2rem solid #363636;
 }
 
 .underlay {
@@ -132,20 +143,13 @@ svg:hover > .filler {
 
 .btn {
   display: inline-block;
-  border: clamp(0.25rem, 0.16rem + 0.45vw, 0.35rem) solid #ebebeb;
+  border: 0.2rem solid #ebebeb;
   padding: 0.5em 1em;
-  background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
-  background-position: -10rem;
-  background-repeat: no-repeat;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: white;
-  transition: color 250ms ease-in-out, background-position 250ms ease-in-out;
+  border-radius: 0.25rem;
 }
 
 .btn:hover {
-  background-position: 0rem;
-  color: transparent;
+  box-shadow: 0 0 1rem 0.5rem #363636 inset;
 }
 
 .border__image {
@@ -169,6 +173,10 @@ svg:hover > .filler {
 }
 
 .contactForm__container input {
+  background-color: #1f1f1f;
+  color: #f1ffff;
+  border-radius: 0.25rem;
+  border: 1px solid #363636;
   width: 100%;
   padding: clamp(0.13rem, 0.03rem + 0.49vw, 0.38rem);
 }
@@ -178,6 +186,11 @@ svg:hover > .filler {
 }
 
 .contactForm__messageInput {
+  background-color: #1f1f1f;
+  color: #f1ffff;
+  border-radius: 0.25rem;
+  border: 1px solid #363636;
+  resize: none;
   width: 100%;
   padding: clamp(0.13rem, 0.03rem + 0.49vw, 0.38rem);
   height: calc(100% - clamp(2rem, 1rem + 0.98vw, 2.5rem));
@@ -201,80 +214,70 @@ svg:hover > .filler {
 .hero {
   display: grid;
   align-items: center;
-  gap: 1em;
+  gap: 0.5em;
   grid-template-columns: 1fr;
   justify-items: center;
   grid-template-areas: "badge" "headline" "subheadline" "text" "cta";
 }
-@media (min-width: 460px) {
+@media (min-width: 920px) {
   .hero {
-    grid-template-columns: 1fr 0.4fr;
     grid-template-areas: "headline badge" "subheadline badge" "text badge" "cta badge";
     justify-items: start;
   }
 }
-.hero__text {
+.hero__subheadline {
   text-align: center;
+  grid-area: subheadline;
+  font-size: clamp(1.5rem, 2.727vw + 0.955rem, 3rem);
+  font-weight: 600;
 }
 @media (min-width: 460px) {
-  .hero__text {
+  .hero__subheadline {
     text-align: left;
   }
 }
-.hero__badge {
+.hero__text {
+  text-align: center;
+  grid-area: text;
+  line-height: 1.5;
+}
+@media (min-width: 920px) {
+  .hero__text {
+    padding-right: 3rem;
+    text-align: left;
+  }
+}
+.hero__logo {
   justify-self: center;
 }
 
 .hero__headline {
-  width: max-content;
-  padding-right: 1rem;
-  color: #1f1f1f;
-  font-family: "Taviraj", serif;
-  font-style: italic;
-  font-size: clamp(2rem, 1.22rem + 3.9vw, 4rem);
-  background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 3px transparent;
-  font-weight: 400;
+  width: auto;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: clamp(1rem, 0.61rem + 1.95vw, 2rem);
+  font-weight: 300;
   grid-area: headline;
 }
 
-.hero__subheadline {
-  grid-area: subheadline;
-}
-
-.hero__accent {
-  background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 3px transparent;
-}
-
-.hero__text {
-  grid-area: text;
-}
-
 .hero__cta {
+  padding-top: 1rem;
   position: relative;
   grid-area: cta;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
 }
 
-.hero__badge {
+.hero__logo {
   grid-area: badge;
-  justify-self: center;
+  width: 240px;
+  height: 240px;
 }
-@media (min-width: 460px) {
-  .hero__badge {
-    justify-self: end;
+@media (min-width: 920px) {
+  .hero__logo {
+    width: 320px;
+    height: 320px;
   }
-}
-
-.hero__badge img {
-  width: clamp(6rem, 2.49rem + 17.56vw, 15rem);
-  aspect-ratio: 1;
-  border: clamp(0.25rem, 0.16rem + 0.45vw, 0.35rem) solid #ebebeb;
-  border-radius: 50%;
 }
 
 .rect {
@@ -315,7 +318,8 @@ svg:hover > .filler {
   grid-template-columns: 1fr;
   align-items: center;
   gap: 1em;
-  border: clamp(0.25rem, 0.16rem + 0.45vw, 0.35rem) solid #363636;
+  border: 0.2rem solid #363636;
+  border-radius: 0.5rem;
   padding: 1em;
   margin-right: 0.25rem;
   grid-template-areas: "badge" "headline" "description" "aside";
@@ -380,7 +384,7 @@ svg:hover > .filler {
   aspect-ratio: 1;
   object-fit: cover;
   width: clamp(6rem, 2.49rem + 17.56vw, 15rem);
-  border: clamp(0.25rem, 0.16rem + 0.45vw, 0.35rem) solid #363636;
+  border: 0.2rem solid #363636;
   border-radius: 50%;
 }
 
@@ -418,14 +422,14 @@ svg:hover > .filler {
 .tab:hover::before,
 .tab:focus::before {
   color: transparent;
-  background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+  background: #f1ffff;
   background-clip: text;
   -webkit-background-clip: text;
 }
 
 .tab.is-selected::before {
   color: transparent;
-  background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+  background: #f1ffff;
   background-clip: text;
   -webkit-background-clip: text;
 }
@@ -433,11 +437,9 @@ svg:hover > .filler {
 .design__content {
   display: grid;
   grid-template-columns: 1fr;
-  height: 60vh;
+  height: 65vh;
   gap: 1rem;
   overflow-y: scroll;
-  scrollbar-width: auto;
-  scrollbar-color: #363636 transparent;
 }
 
 .design__content::-webkit-scrollbar {
@@ -461,17 +463,19 @@ svg:hover > .filler {
 
 .designProject {
   position: relative;
-  border: clamp(0.25rem, 0.16rem + 0.45vw, 0.35rem) solid #363636;
+  border: 0.2rem solid #363636;
   height: 30vh;
   margin-right: 0.25rem;
+  border-radius: 0.25rem;
 }
 
 .designProject > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.65;
+  opacity: 0.35;
   transition: opacity 150ms ease-in-out;
+  cursor: pointer;
 }
 
 .designName {
@@ -479,7 +483,7 @@ svg:hover > .filler {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  cursor: default;
+  cursor: pointer;
 }
 
 .designProject:hover > img {
@@ -514,13 +518,13 @@ svg:hover > .filler {
   z-index: 1;
 }
 
-.cocoenWrapper {
-  position: relative;
-  border: clamp(0.25rem, 0.16rem + 0.45vw, 0.35rem) solid #363636;
-}
-
 .figmaDesign {
+  position: relative;
+  border: 0.2rem solid #363636;
+  border-radius: 0.5rem;
   max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "design" "content";
@@ -532,7 +536,7 @@ svg:hover > .filler {
 }
 @media (min-width: 920px) {
   .figmaDesign {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.4fr 0.6fr;
     grid-template-areas: "design content";
     max-width: 75vw;
   }
@@ -541,16 +545,15 @@ svg:hover > .filler {
 .designFigma {
   grid-area: design;
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
 .content {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 1rem;
   grid-area: content;
   background-color: rgba(31, 31, 31, 0.6666666667);
 }
@@ -588,33 +591,14 @@ svg:hover > .filler {
   border-radius: 5px;
 }
 
-.about__name {
-  width: max-content;
-  padding-right: 1rem;
-  font-family: "Taviraj", serif;
-  font-size: clamp(2rem, 1.22rem + 3.9vw, 4rem);
-  font-style: italic;
-  background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
-  background-clip: initial;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
 .about__listItemHeading {
   position: relative;
   padding-right: 1rem;
-  color: #1f1f1f;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: "Titillium Web", sans-serif;
   font-size: clamp(1rem, 0.61rem + 1.95vw, 2rem);
-  font-style: italic;
-  background: #fff;
-  background-clip: initial;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 2px transparent;
+  margin-block: 0.75rem;
+  padding-bottom: 0.5rem;
   cursor: pointer;
-  margin-block: 1rem;
-  padding-block: 0.5rem;
   border-bottom: 2px solid #363636;
 }
 
@@ -634,7 +618,8 @@ svg:hover > .filler {
 }
 
 .about__listItemText p {
-  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
 }
 
 .aboutPreviousExperience {
@@ -655,6 +640,8 @@ svg:hover > .filler {
 
 .aboutPersonalHeadings {
   font-style: italic;
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
 
 .aboutPersonalText {
@@ -663,9 +650,6 @@ svg:hover > .filler {
 
 .accordion__content {
   transition: height 250ms ease-in-out;
-  overflow-y: scroll;
-  overflow-anchor: auto;
-  overflow-x: hidden;
   padding-right: 0.5rem;
 }
 
@@ -725,7 +709,7 @@ svg:hover > .filler {
 
 .contactForm__label {
   display: inline-block;
-  font-weight: bold;
+  font-weight: 300;
   margin-bottom: 0.5rem;
 }
 
@@ -734,17 +718,6 @@ svg:hover > .filler {
 }
 .contactPickupLine p {
   font-family: "Montserrat Alternates", sans-serif;
-  font-size: clamp(1rem, 0.61rem + 1.95vw, 2rem);
-}
-.contactPickupLine__accent {
-  color: #1f1f1f;
-  font-size: clamp(1rem, 0.61rem + 1.95vw, 2rem);
-  font-style: italic;
-  background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
-  background-clip: initial;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 3px transparent;
-  padding-left: 0.25rem;
 }
 
 .submitButton {
@@ -752,8 +725,8 @@ svg:hover > .filler {
   width: fit-content;
   display: inline-block;
   padding: 0.5rem 1rem;
-  border: clamp(0.25rem, 0.16rem + 0.45vw, 0.35rem) solid #ebebeb;
-  font-weight: bold;
+  border: 1px solid white;
+  font-weight: 400;
   grid-area: submit;
   justify-self: center;
 }

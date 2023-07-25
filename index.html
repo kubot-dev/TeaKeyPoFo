@@ -7,6 +7,15 @@
     <link rel="icon" type="image/x-icon" href="/img/Logo kubot-02.png" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.154.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.154.0/examples/jsm/"
+        }
+      }
+    </script>
     <title>kubot.dev</title>
   </head>
   <body>
@@ -17,23 +26,26 @@
             <div class="navbar__logo"><a href="index.html">kubo.t</a></div>
             <ul class="navbar__navigation">
               <li class="navbar__navigation__listItem">
-                <a class="navLinkHover" href="mywork.html">Work</a>
+                <a class="navLink" href="mywork.html">Work</a>
               </li>
               <li class="navbar__navigation__listItem">
-                <a class="navLinkHover" href="design.html">Design</a>
+                <a class="navLink" href="design.html">Design</a>
               </li>
               <li class="navbar__navigation__listItem">
-                <a class="navLinkHover" href="about.html">About</a>
+                <a class="navLink" href="about.html">About</a>
               </li>
               <li class="navbar__navigation__listItem">
-                <a class="navLinkHover" href="contact.html">Contact</a>
+                <a class="navLink" href="contact.html">Contact</a>
+              </li>
+              <li>
+                <a class="btn cv" href="img/Tomas-Kubo-CV.pdf" download>Get a CV</a>
               </li>
             </ul>
           </nav>
         </header>
         <main class="home">
           <div class="hero">
-            <h1 class="hero__headline">Tomáš Kubo</h1>
+            <h1 class="hero__headline">Hello, my name is <span style="font-weight: bold">Tomáš Kubo</span> 👋</h1>
             <h3 class="hero__subheadline">I make your website <span class="hero__accent">matter</span></h3>
             <p class="hero__text">
               I'm a front-end developer based in Bratislava who is passionate in building and designing digital experiences which make
@@ -42,7 +54,7 @@
             <div class="hero__cta">
               <a class="hero__ctaButton btn" href="mywork.html">See my work</a>
             </div>
-            <div class="hero__badge"><img src="/img/Profile_pic.jpg" alt="badge image" /></div>
+            <div class="hero__logo"></div>
           </div>
         </main>
         <footer>
@@ -128,5 +140,6 @@
       </div>
     </div>
     <script src="./js/main.js"></script>
+    <script type="module" src="/js/home-logo.js"></script>
   </body>
 </html>

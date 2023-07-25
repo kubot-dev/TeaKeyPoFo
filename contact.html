@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
+    <link rel="icon" type="image/x-icon" href="/img/Logo kubot-02.png" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <title>Document</title>
@@ -16,16 +17,19 @@
             <div class="navbar__logo"><a href="index.html">kubo.t</a></div>
             <ul class="navbar__navigation">
               <li class="navbar__navigation__listItem">
-                <a class="navLinkHover" href="mywork.html">Work</a>
+                <a class="navLink" href="mywork.html">Work</a>
               </li>
               <li class="navbar__navigation__listItem">
-                <a class="navLinkHover" href="design.html">Design</a>
+                <a class="navLink" href="design.html">Design</a>
               </li>
               <li class="navbar__navigation__listItem">
-                <a class="navLinkHover" href="about.html">About</a>
+                <a class="navLink" href="about.html">About</a>
               </li>
               <li class="navbar__navigation__listItem">
-                <a class="navLinkHover" href="contact.html">Contact</a>
+                <a class="navLink" href="contact.html">Contact</a>
+              </li>
+              <li>
+                <a class="btn cv" href="img/Tomas-Kubo-CV.pdf" download>Get a CV</a>
               </li>
             </ul>
           </nav>
@@ -34,22 +38,22 @@
           <form class="contactForm__container" action="https://formsubmit.co/1f11979adc55865651441340fcf28ff1" method="POST">
             <div class="contactForm__nameContainer">
               <label class="contactForm__label" for="name">Name:</label>
-              <input class="contactForm__nameInput" id="name" type="text" name="name" id="" placeholder="enter your name" />
+              <input class="contactForm__nameInput" id="name" type="text" name="name" />
             </div>
             <div class="contactForm__emailContainer">
               <label class="contactForm__label" for="email">Email:</label>
-              <input class="contactForm__emailInput" id="email" type="email" name="email" id="" placeholder="enter your email" />
+              <input class="contactForm__emailInput" id="email" type="email" name="email" />
             </div>
             <div class="contactForm__messageContainer">
               <label class="contactForm__label" for="message">Message:</label>
               <div class="textAreaWrapper">
-                <textarea id="message" name="message" class="contactForm__messageInput" placeholder="leave a message"></textarea>
+                <textarea id="message" name="message" class="contactForm__messageInput"></textarea>
               </div>
             </div>
             <button class="submitButton btn" type="submit">Send</button>
           </form>
           <div class="contactPickupLine">
-            <p>Looking forward to work with <span class="contactPickupLine__accent">you.</span></p>
+            <p>Looking forward to work with you</p>
           </div>
         </main>
         <footer>

@@ -6,7 +6,7 @@
 .hero {
   display: grid;
   align-items: center;
-  gap: 1em;
+  gap: 0.5em;
   grid-template-columns: 1fr;
   justify-items: center;
   grid-template-areas:
@@ -16,8 +16,7 @@
     'text'
     'cta';
 
-  @include abstracts.for-tablet-portrait-up {
-    grid-template-columns: 1fr 0.4fr;
+  @include abstracts.for-tablet-landscape-up {
     grid-template-areas:
       'headline badge'
       'subheadline badge'
@@ -26,69 +25,61 @@
     justify-items: start;
   }
 
-  &__text {
+  &__subheadline {
     text-align: center;
+    grid-area: subheadline;
+    font-size: abstracts.$headline-size-clamp;
+    font-weight: 600;
     @include abstracts.for-tablet-portrait-up {
       text-align: left;
     }
   }
 
-  &__badge {
+  &__text {
+    text-align: center;
+    grid-area: text;
+    line-height: 1.5;
+    @include abstracts.for-tablet-landscape-up {
+      padding-right: 3rem;
+      text-align: left;
+    }
+  }
+
+  &__logo {
     justify-self: center;
   }
 }
 
 .hero__headline {
-  width: max-content;
-  padding-right: 1rem;
-  color: abstracts.$background-dark;
-  font-family: abstracts.$hero-name;
-  font-style: italic;
-  font-size: abstracts.$headline-size-clamp;
-  background: abstracts.$accent-gradient;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 3px transparent;
+  width: auto;
 
-  font-weight: 400;
+  font-family: abstracts.$logo;
+  font-size: abstracts.$large-font-size-clamp;
+
+  font-weight: 300;
 
   grid-area: headline;
 }
 
-.hero__subheadline {
-  grid-area: subheadline;
-}
-
-.hero__accent {
-  background: abstracts.$accent-gradient;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 3px transparent;
-}
-
-.hero__text {
-  grid-area: text;
-}
-
 .hero__cta {
+  padding-top: 1rem;
   position: relative;
   grid-area: cta;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
 }
 
-.hero__badge {
+.hero__logo {
   grid-area: badge;
-  justify-self: center;
+  width: 240px;
+  // min-height: 180px;
+  height: 240px;
 
-  @include abstracts.for-tablet-portrait-up {
-    justify-self: end;
+  @include abstracts.for-tablet-landscape-up {
+    width: 320px;
+    height: 320px;
   }
-}
-
-.hero__badge img {
-  width: abstracts.$badge-size-clamp;
-  aspect-ratio: 1;
-  border: abstracts.$thinner-border-clamp solid abstracts.$border-accent;
-  border-radius: 50%;
 }
 
 .rect {

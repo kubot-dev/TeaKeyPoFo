@@ -8,7 +8,7 @@
 
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -28,24 +28,35 @@
   // padding hack for vertically center align in flex container
   padding-block: clamp(0.25rem, -0.04rem + 1.46vw, 1rem);
 
-  text-align: center;
-  flex-grow: 1;
   display: flex;
-  justify-content: space-between;
-  gap: 1em;
+  align-items: center;
+  gap: 1rem;
 }
 
-.navLinkHover {
-  background: abstracts.$accent-gradient;
-  background-size: 0% 2px;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  transition: background-size 250ms ease-in-out;
+.navLink::after {
+  display: block;
+  content: '';
+  border-bottom: solid 2px abstracts.$font-light;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  border-radius: 1px;
 }
 
-.navLinkHover:hover,
-.navLinkHover:active {
-  background-size: 75% 2px;
+.navLink:hover::after,
+.navLink:active::after {
+  transform: scaleX(1);
+}
+
+.navLink.active::after {
+  transform: scaleX(1);
+}
+
+.btn.cv {
+  opacity: 0.75;
+  padding-inline: 8px;
+  padding-block: 4px;
+  text-align: center;
+  border: clamp(0.1rem, 0.2rem, 0.3rem) solid abstracts.$border-dimmed;
 }
 
 .underlay {
